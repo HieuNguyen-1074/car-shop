@@ -1,6 +1,18 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import { cn } from '@/lib/utils'
+import StoreProvider from './StoreProvider'
+import "@/assets/styles/home.scss"
+
+
+//  image
+import Image from 'next/image'
+import imageCar from "@/assets/images/Group 3.png"
+
+// icon 
+import { GrNext } from "react-icons/gr";
+import Footer from '@/components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -11,12 +23,22 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  banner,
+  shop,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode,
+  banner: React.ReactNode
+  shop: React.ReactNode
 }) {
+
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
+    <StoreProvider>
+      <html lang="en" className='h-full'>
+        <body className={cn("w-full h-full overflow-hidden", inter.className)}>
+          {children}
+
+        </body>
+      </html>
+    </StoreProvider>
   )
 }

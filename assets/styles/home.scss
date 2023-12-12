@@ -1,0 +1,88 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@600&display=swap');
+
+.home{
+    transition: all 1s ease-in-out;
+    &-title{
+        font-size: 10rem;
+        font-family: 'Teko', sans-serif;
+       position : fixed ; 
+       top: 50%;
+       left : 50% ; 
+       z-index: 2;
+       transform: translate(-50%, -50%);
+       letter-spacing: 30px;
+       color: red;
+       animation: titleHome  1.5s forwards  ease-in-out;
+    }
+    &-main{
+        animation:  mainHome 1.5s forwards ease-in-out;
+       
+    }
+    &_shop{
+
+        transform: translateX(-100vw);
+    }
+  
+}
+.shop-list-car{
+
+    & > div{
+        // width: calc((100% - (20px)) /3);
+        // min-height: 300px;
+    }
+}
+.car{
+    &-item{ 
+            &-btn-detail:hover{
+                svg{
+                    opacity: 1;
+                     transform: translateX(0);
+                    transition: all .3s ease-in-out;
+            }
+        }
+       
+    }
+   
+}
+
+
+// animations set up
+
+@keyframes titleHome {
+    0% {
+        letter-spacing: 30px;
+        font-family: 'Teko', sans-serif;
+     
+    }
+    100% {
+        font-size: 1rem;
+        top : 4%;
+        letter-spacing: 3px;
+        opacity: 1;
+      }
+}
+
+@keyframes mainHome {
+    0% {
+        letter-spacing: 30px;
+        font-family: 'Teko', sans-serif;
+       opacity: 0.3;
+    }
+    100% {
+        font-size: 1rem;
+        top : 4%;
+        opacity: 1;
+        letter-spacing: 3px;
+      }
+}
+.shop-list-car-back-btn{
+    cursor: pointer;
+    &:hover div{
+    
+            transition:  all 0.3  ease-in-out;
+            opacity: 1;
+            transform: translateY(0);
+        
+    }
+}
